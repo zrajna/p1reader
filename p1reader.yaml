@@ -1,7 +1,7 @@
 esphome:
   name: esp-p1reader
   platform: ESP8266
-  board: nodemcu
+  board: d1_mini_pro
   includes:
     - p1reader.h
 
@@ -31,8 +31,9 @@ ota:
 
 uart:
   id: uart_bus
-  tx_pin: TX
-  rx_pin: RX
+  rx_pin:
+    number: 3
+    inverted: true
   baud_rate: 115200
 
 # If your electricity meter is an Aidon, which use the older
